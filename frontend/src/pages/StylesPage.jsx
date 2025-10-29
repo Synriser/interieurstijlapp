@@ -83,7 +83,7 @@ function StylesPage() {
       <StyleGrid
         styles={filteredStyles}
         onStyleClick={handleStyleClick}
-        selectedStyleId={chosenStyle?.id}
+        selectedStyleId={selectedStyle?.id}
       />
 
       {/* No Results */}

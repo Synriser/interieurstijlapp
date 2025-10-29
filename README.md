@@ -10,6 +10,7 @@ Een full-stack applicatie voor het verkennen, aanpassen en visualiseren van inte
 - [Project Structuur](#project-structuur)
 - [Installatie](#installatie)
 - [Development](#development)
+- [Git Workflow](#git-workflow)
 - [API Endpoints](#api-endpoints)
 - [Database Schema](#database-schema)
 - [Troubleshooting](#troubleshooting)
@@ -227,6 +228,79 @@ npm run build
 cd frontend && npm run build
 
 # Output: frontend/dist/
+```
+
+## Git Workflow
+
+### Je Repository Bewaren in GitHub
+
+Volg deze 3 stappen elke keer dat je wijzigingen hebt gemaakt:
+
+#### 1. Check je wijzigingen
+```bash
+git status
+```
+
+#### 2. Voeg alle wijzigingen toe
+```bash
+git add .
+```
+
+#### 3. Maak een commit (bewaar lokaal)
+```bash
+git commit -m "Beschrijf je wijzigingen hier"
+```
+
+Voorbeelden van goede commit berichten:
+- `"Update styles page layout"`
+- `"Fix bug in paint selector"`
+- `"Add new color palette feature"`
+- `"Update README with Git workflow"`
+
+#### 4. Push naar GitHub
+```bash
+git push origin main
+```
+
+### Snel Commando
+```bash
+# Alles in één keer (gebruik alleen als je zeker weet wat je doet!)
+git add . && git commit -m "jouw bericht" && git push origin main
+```
+
+### Tips
+- ✅ Commit regelmatig (dagelijks, of meerdere keren per dag)
+- ✅ Gebruik beschrijvende commit berichten
+- ✅ Check altijd eerst met `git status` wat je gaat committen
+- ✅ Push naar GitHub voor backup van je code
+
+### Git Status Begrijpen
+```bash
+git status
+```
+
+**Output betekenis:**
+- **Modified**: Bestanden die gewijzigd zijn maar nog niet toegevoegd
+- **Staged**: Bestanden die klaar zijn om te committen (na `git add`)
+- **Untracked**: Nieuwe bestanden die nog niet in Git zitten
+
+### Repo Clonen (Eerste Keer)
+```bash
+# Maak een lokale kopie van je GitHub repo
+git clone git@github.com:Synriser/interieurstijlapp.git
+cd interieurstijlapp
+```
+
+### Problemen Oplossen
+```bash
+# Update je lokale repo met de laatste versie van GitHub
+git pull origin main
+
+# Check de geschiedenis van je commits
+git log --oneline
+
+# Bekijk wat er gewijzigd is in een bestand
+git diff bestandsnaam.jsx
 ```
 
 ## API Endpoints

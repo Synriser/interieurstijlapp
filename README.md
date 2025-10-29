@@ -26,6 +26,7 @@ De Interieurstijl App helpt gebruikers om verschillende interieurstijlen te ontd
 ## Features
 
 ### Huidige Features
+
 - ✅ Browse interieurstijlen met gedetailleerde informatie
 - ✅ Responsive design met Tailwind CSS
 - ✅ RESTful API met Express
@@ -33,6 +34,7 @@ De Interieurstijl App helpt gebruikers om verschillende interieurstijlen te ontd
 - ✅ Prisma ORM voor database management
 
 ### Toekomstige Features
+
 - 🔄 AI-powered style transfer voor foto's
 - 🔄 Gebruikersauthenticatie
 - 🔄 Project opslaan en delen
@@ -41,6 +43,7 @@ De Interieurstijl App helpt gebruikers om verschillende interieurstijlen te ontd
 ## Tech Stack
 
 ### Frontend
+
 - **React 18** - UI library
 - **Vite** - Build tool en dev server
 - **React Router** - Client-side routing
@@ -50,6 +53,7 @@ De Interieurstijl App helpt gebruikers om verschillende interieurstijlen te ontd
 - **React Dropzone** - File upload component
 
 ### Backend
+
 - **Node.js** - Runtime environment
 - **Express** - Web framework
 - **Prisma** - ORM voor database
@@ -59,6 +63,7 @@ De Interieurstijl App helpt gebruikers om verschillende interieurstijlen te ontd
 - **Morgan** - HTTP logger
 
 ### Development Tools
+
 - **ESLint** - Code linting
 - **Prettier** - Code formatting
 - **Nodemon** - Auto-restart server
@@ -130,23 +135,27 @@ cd ../backend && npm install # Backend dependencies
 ### Stap 3: Environment Variables
 
 #### Frontend (.env)
+
 ```bash
 cd frontend
 cp .env.example .env
 ```
 
 Bewerk `frontend/.env`:
+
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
 #### Backend (.env)
+
 ```bash
 cd backend
 cp .env.example .env
 ```
 
 Bewerk `backend/.env`:
+
 ```env
 PORT=5000
 NODE_ENV=development
@@ -186,6 +195,7 @@ npm run dev
 ```
 
 Dit start:
+
 - Frontend op http://localhost:3000
 - Backend op http://localhost:5000
 
@@ -237,54 +247,64 @@ cd frontend && npm run build
 Volg deze 3 stappen elke keer dat je wijzigingen hebt gemaakt:
 
 #### 1. Check je wijzigingen
+
 ```bash
 git status
 ```
 
 #### 2. Voeg alle wijzigingen toe
+
 ```bash
 git add .
 ```
 
 #### 3. Maak een commit (bewaar lokaal)
+
 ```bash
 git commit -m "Beschrijf je wijzigingen hier"
 ```
 
 Voorbeelden van goede commit berichten:
+
 - `"Update styles page layout"`
 - `"Fix bug in paint selector"`
 - `"Add new color palette feature"`
 - `"Update README with Git workflow"`
 
 #### 4. Push naar GitHub
+
 ```bash
 git push origin main
 ```
 
 ### Snel Commando
+
 ```bash
 # Alles in één keer (gebruik alleen als je zeker weet wat je doet!)
 git add . && git commit -m "jouw bericht" && git push origin main
 ```
 
 ### Tips
+
 - ✅ Commit regelmatig (dagelijks, of meerdere keren per dag)
 - ✅ Gebruik beschrijvende commit berichten
 - ✅ Check altijd eerst met `git status` wat je gaat committen
 - ✅ Push naar GitHub voor backup van je code
 
 ### Git Status Begrijpen
+
 ```bash
 git status
 ```
 
 **Output betekenis:**
+
 - **Modified**: Bestanden die gewijzigd zijn maar nog niet toegevoegd
 - **Staged**: Bestanden die klaar zijn om te committen (na `git add`)
 - **Untracked**: Nieuwe bestanden die nog niet in Git zitten
 
 ### Repo Clonen (Eerste Keer)
+
 ```bash
 # Maak een lokale kopie van je GitHub repo
 git clone git@github.com:Synriser/interieurstijlapp.git
@@ -292,6 +312,7 @@ cd interieurstijlapp
 ```
 
 ### Problemen Oplossen
+
 ```bash
 # Update je lokale repo met de laatste versie van GitHub
 git pull origin main
@@ -306,6 +327,7 @@ git diff bestandsnaam.jsx
 ## API Endpoints
 
 ### Base URL
+
 ```
 http://localhost:5000/api
 ```
@@ -313,11 +335,13 @@ http://localhost:5000/api
 ### Styles
 
 #### Get All Styles
+
 ```http
 GET /api/styles
 ```
 
 Response:
+
 ```json
 [
   {
@@ -335,6 +359,7 @@ Response:
 ```
 
 #### Get Style by ID
+
 ```http
 GET /api/styles/:id
 ```
@@ -342,15 +367,18 @@ GET /api/styles/:id
 ### Upload
 
 #### Upload Image
+
 ```http
 POST /api/upload
 Content-Type: multipart/form-data
 ```
 
 Body:
+
 - `image`: File (jpeg, jpg, png, webp, max 10MB)
 
 Response:
+
 ```json
 {
   "message": "File uploaded successfully",
@@ -367,17 +395,20 @@ Response:
 ### Projects
 
 #### Get All Projects
+
 ```http
 GET /api/projects
 ```
 
 #### Create Project
+
 ```http
 POST /api/projects
 Content-Type: application/json
 ```
 
 Body:
+
 ```json
 {
   "name": "My Living Room",
@@ -388,16 +419,19 @@ Body:
 ```
 
 #### Get Project by ID
+
 ```http
 GET /api/projects/:id
 ```
 
 #### Delete Project
+
 ```http
 DELETE /api/projects/:id
 ```
 
 ### Health Check
+
 ```http
 GET /health
 ```
@@ -405,6 +439,7 @@ GET /health
 ## Database Schema
 
 ### Style Model
+
 ```prisma
 model Style {
   id              String    @id @default(uuid())
@@ -421,6 +456,7 @@ model Style {
 ```
 
 ### Project Model
+
 ```prisma
 model Project {
   id           String   @id @default(uuid())
@@ -485,6 +521,7 @@ npm install
 ### CORS Issues
 
 Als je CORS errors krijgt, check of:
+
 1. Backend draait op http://localhost:5000
 2. Frontend `.env` heeft correcte `VITE_API_URL`
 3. Backend CORS is enabled (check `backend/src/server.js`)
@@ -503,6 +540,7 @@ chmod 755 uploads
 ## Scripts Overzicht
 
 ### Root Scripts
+
 - `npm run dev` - Start frontend & backend
 - `npm run dev:frontend` - Start alleen frontend
 - `npm run dev:backend` - Start alleen backend
@@ -510,6 +548,7 @@ chmod 755 uploads
 - `npm run build` - Build frontend voor productie
 
 ### Frontend Scripts
+
 - `npm run dev` - Start dev server
 - `npm run build` - Build voor productie
 - `npm run preview` - Preview production build
@@ -517,6 +556,7 @@ chmod 755 uploads
 - `npm run format` - Format code met Prettier
 
 ### Backend Scripts
+
 - `npm run dev` - Start dev server met nodemon
 - `npm start` - Start production server
 - `npm run prisma:generate` - Generate Prisma Client

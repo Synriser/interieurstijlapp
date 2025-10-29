@@ -38,9 +38,23 @@ function PaintProductCard({ product, onSelect, isSelected = false }) {
         />
         {/* Color Code Overlay */}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
-          <p className="text-white font-mono text-sm font-semibold">
-            {product.hexColor}
-          </p>
+          <div className="flex items-center justify-between">
+            <p className="text-white font-mono text-sm font-semibold">
+              {product.hexColor}
+            </p>
+            {product.rgb && (() => {
+              try {
+                const rgb = typeof product.rgb === 'string' ? JSON.parse(product.rgb) : product.rgb;
+                return (
+                  <p className="text-white/90 text-xs font-mono">
+                    RGB({rgb.r}, {rgb.g}, {rgb.b})
+                  </p>
+                );
+              } catch (e) {
+                return null;
+              }
+            })()}
+          </div>
         </div>
       </div>
 
@@ -70,6 +84,53 @@ function PaintProductCard({ product, onSelect, isSelected = false }) {
             </p>
           </div>
         </div>
+
+        {/* Color Palette */}
+        {product.rgb && (() => {
+          try {
+            const rgb = typeof product.rgb === 'string' ? JSON.parse(product.rgb) : product.rgb;
+            // Generate color variations (lighter and darker)
+            const generateVariations = (r, g, b) => {
+              const lighter = {
+                r: Math.min(255, Math.round(r + (255 - r) * 0.3)),
+                g: Math.min(255, Math.round(g + (255 - g) * 0.3)),
+                b: Math.min(255, Math.round(b + (255 - b) * 0.3)),
+              };
+              const darker = {
+                r: Math.max(0, Math.round(r * 0.7)),
+                g: Math.max(0, Math.round(g * 0.7)),
+                b: Math.max(0, Math.round(b * 0.7)),
+              };
+              return [lighter, { r, g, b }, darker];
+            };
+
+            const variations = generateVariations(rgb.r, rgb.g, rgb.b);
+
+            return (
+              <div className="pt-2 border-t border-gray-100">
+                <p className="text-xs text-gray-500 mb-2">Kleurenpalet</p>
+                <div className="flex gap-2">
+                  {variations.map((color, index) => (
+                    <div key={index} className="flex-1">
+                      <div
+                        className="w-full h-10 rounded border border-gray-200 shadow-sm"
+                        style={{
+                          backgroundColor: `rgb(${color.r}, ${color.g}, ${color.b})`,
+                        }}
+                        title={`RGB(${color.r}, ${color.g}, ${color.b})`}
+                      />
+                      <p className="text-xs text-gray-400 text-center mt-1">
+                        {index === 0 ? 'Lichter' : index === 1 ? 'Basis' : 'Donkerder'}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          } catch (e) {
+            return null;
+          }
+        })()}
 
         {/* Product Line */}
         <div className="pt-2 border-t border-gray-100">

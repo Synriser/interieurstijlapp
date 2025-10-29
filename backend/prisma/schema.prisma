@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Style {
+  id             String   @id @default(uuid())
+  name           String
+  description    String
+  characteristics String   // JSON string
+  colors         String   // JSON string
+  materials      String   // JSON string
+  imageUrl       String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  projects       Project[]
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  name        String
+  imageUrl    String
+  styleId     String
+  style       Style    @relation(fields: [styleId], references: [id])
+  customColors String   // JSON string
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model PaintProduct {
+  id          String   @id @default(uuid())
+  brand       String   // Sikkens, Sigma, Trimetal, Herbol
+  name        String   // Product name
+  colorCode   String   // Brand-specific color code (e.g., "F2.02.50")
+  colorName   String   // Marketing name (e.g., "Warm Wit")
+  hexColor    String   // Hex color code (#FFFFFF)
+  rgb         String   // RGB values as JSON string
+  finish      String   // Mat, Zijdeglans, Hoogglans, etc.
+  productLine String   // Product line (e.g., "Alpha Rezisto", "S3000")
+  type        String   // Interior, Exterior, Wood, Metal
+  coverage    Float    // m² per liter
+  price       Float?   // Price per liter (optional)
+  url         String?  // Product URL
+  inStock     Boolean  @default(true)
+  popular     Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([brand])
+  @@index([hexColor])
+  @@index([popular])
+}

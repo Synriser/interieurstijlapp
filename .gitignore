@@ -1,0 +1,41 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log
+pnpm-lock.yaml
+
+# Root lockfile (keep only one if you prefer)
+package-lock.json
+
+# Build outputs
+frontend/dist/
+frontend/build/
+backend/dist/
+
+# Env files
+.env
+*.env
+frontend/.env*
+backend/.env*
+
+# Logs
+logs/
+*.log
+
+# Mac
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Prisma
+backend/prisma/dev.db
+backend/prisma/*.db
+backend/prisma/*.db-journal
+
+# Uploads and generated assets (commit only if intentional)
+backend/uploads/
+
+# Docs large binaries (optional)
+docs/*.docx

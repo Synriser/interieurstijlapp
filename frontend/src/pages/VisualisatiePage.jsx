@@ -9,6 +9,7 @@ import {
   Lightbulb,
   ArrowLeft,
   Mail,
+  Info,
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
@@ -141,8 +142,14 @@ function VisualisatiePage() {
               {/* Room Size Input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
                     Lengte (m)
+                    <div className="group relative">
+                      <Info className="w-4 h-4 text-gray-400 cursor-help" />
+                      <span className="absolute left-0 top-6 w-64 p-2 bg-gray-900 text-white text-xs rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-normal">
+                        Lengte van één wand in meters. Aanname: vierkante ruimte
+                      </span>
+                    </div>
                   </label>
                   <input
                     type="number"

@@ -39,3 +39,9 @@ backend/uploads/
 
 # Docs large binaries (optional)
 docs/*.docx
+
+# Backup/temp files
+*.backup
+*.bak
+*.tmp
+*~

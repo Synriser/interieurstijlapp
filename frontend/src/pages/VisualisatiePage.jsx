@@ -157,9 +157,10 @@ function VisualisatiePage() {
                     value={roomSize}
                     onChange={(e) => setRoomSize(e.target.value === '' ? '' : Number(e.target.value))}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                    min="1"
+                    min="10"
                     max="50"
                     step="0.1"
+                    pattern="[0-9]{2,}"
                   />
                 </div>
                 <div>

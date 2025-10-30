@@ -134,25 +134,31 @@ function StyleDetailPanel({ isOpen, onClose, style, onSelectStyle }) {
             </div>
           </div>
 
-          {/* Example Images Section - Placeholder */}
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">
-              Voorbeeldfoto's
-            </h3>
-            <div className="grid grid-cols-2 gap-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center"
-                >
-                  <ImageIcon className="w-8 h-8 text-gray-400" />
-                </div>
-              ))}
+          {/* Example Images Section */}
+          {style.exampleImages && style.exampleImages.length > 0 && (
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                Materiaalvoorbeelden
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {style.exampleImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className="aspect-square bg-gray-100 rounded-lg overflow-hidden border border-gray-200"
+                  >
+                    <img
+                      src={image}
+                      alt={`${style.name} materiaal ${index + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-gray-500 mt-2">
+                Voorbeelden van materialen die passen bij deze stijl
+              </p>
             </div>
-            <p className="text-xs text-gray-500 mt-2">
-              Voorbeeldfoto's beschikbaar binnenkort
-            </p>
-          </div>
+          )}
         </div>
 
         {/* Footer - Sticky Action Buttons */}

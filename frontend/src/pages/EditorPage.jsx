@@ -238,8 +238,8 @@ function EditorPage() {
             Kies een modus en experimenteer met kleuren in je ruimte
           </p>
 
-          {/* Mode Toggle */}
-          <div className="mt-4 inline-flex rounded-lg border border-gray-300 bg-white p-1">
+          {/* Mode Toggle - Hidden */}
+          <div className="mt-4 inline-flex rounded-lg border border-gray-300 bg-white p-1" style={{ display: 'none' }}>
             <button
               onClick={() => setEditorMode('room')}
               className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors ${

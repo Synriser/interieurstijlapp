@@ -14,6 +14,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#FFFFFF', '#000000', '#808080', '#C0C0C0'],
     materials: ['Glas', 'Staal', 'Beton', 'Glad hout'],
     imageUrl: '/assets/images/modern.png',
+    exampleImages: [
+      '/assets/images/materials/glas.png',
+      '/assets/images/materials/staal.png',
+      '/assets/images/materials/beteon.png',
+      '/assets/images/materials/licht hout.png'
+    ],
   },
   {
     id: '2',
@@ -29,6 +35,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#FFFFFF', '#F5F5DC', '#D3D3D3', '#8B7355'],
     materials: ['Licht hout', 'Wol', 'Linnen', 'Leer'],
     imageUrl: '/assets/images/scandinavisch.png',
+    exampleImages: [
+      '/assets/images/materials/licht hout.png',
+      '/assets/images/materials/wol.png',
+      '/assets/images/materials/linnen.png',
+      '/assets/images/materials/zacht_hout.png'
+    ],
   },
   {
     id: '3',
@@ -44,6 +56,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#696969', '#8B4513', '#000000', '#D2691E'],
     materials: ['Metaal', 'Baksteen', 'Beton', 'Oud hout'],
     imageUrl: '/assets/images/industrial.png',
+    exampleImages: [
+      '/assets/images/materials/staal.png',
+      '/assets/images/materials/baksteen.png',
+      '/assets/images/materials/beteon.png',
+      '/assets/images/materials/donker_hout.png'
+    ],
   },
   {
     id: '4',
@@ -59,6 +77,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#8B4513', '#DAA520', '#9370DB', '#CD853F'],
     materials: ['Rotan', 'Macramé', 'Katoen', 'Vintage hout'],
     imageUrl: '/assets/images/bohemian.png',
+    exampleImages: [
+      '/assets/images/materials/rotan.png',
+      '/assets/images/materials/katoen2.png',
+      '/assets/images/materials/vintage wood.png',
+      '/assets/images/materials/linnen.png'
+    ],
   },
   {
     id: '5',
@@ -74,6 +98,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#F5F5DC', '#8B7355', '#DAA520', '#FFFFFF'],
     materials: ['Donker hout', 'Marmer', 'Fluweel', 'Zijde'],
     imageUrl: '/assets/images/klassiek.png',
+    exampleImages: [
+      '/assets/images/materials/donker_hout.png',
+      '/assets/images/materials/witte marmer.png',
+      '/assets/images/materials/Fluweel.png',
+      '/assets/images/materials/zijde.png'
+    ],
   },
   {
     id: '6',
@@ -89,6 +119,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#F5DEB3', '#DEB887', '#FFFFFF', '#8B7355'],
     materials: ['Verweerd hout', 'Linnen', 'Aardewerk', 'Rotan'],
     imageUrl: '/assets/images/landelijk.png',
+    exampleImages: [
+      '/assets/images/materials/verweerd hout.png',
+      '/assets/images/materials/linnen.png',
+      '/assets/images/materials/aardewerk.png',
+      '/assets/images/materials/rotan.png'
+    ],
   },
   {
     id: '7',
@@ -104,6 +140,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#F5F5DC', '#D3D3D3', '#8B7355', '#000000'],
     materials: ['Bamboe', 'Licht hout', 'Linnen', 'Papier'],
     imageUrl: '/assets/images/japandi.png',
+    exampleImages: [
+      '/assets/images/materials/bamboe.png',
+      '/assets/images/materials/licht hout.png',
+      '/assets/images/materials/linnen.png',
+      '/assets/images/materials/papier.png'
+    ],
   },
   {
     id: '8',
@@ -119,6 +161,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#000000', '#DAA520', '#00008B', '#FFFFFF'],
     materials: ['Fluweel', 'Marmer', 'Chroom', 'Glas'],
     imageUrl: '/assets/images/artdeco.png',
+    exampleImages: [
+      '/assets/images/materials/Fluweel.png',
+      '/assets/images/materials/witte marmer.png',
+      '/assets/images/materials/chrome.png',
+      '/assets/images/materials/glas.png'
+    ],
   },
   {
     id: '9',
@@ -134,6 +182,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#F0E68C', '#87CEEB', '#FFFFFF', '#CD853F'],
     materials: ['Terracotta', 'Natuursteen', 'Gewit hout', 'Linnen'],
     imageUrl: '/assets/images/mediterraans.png',
+    exampleImages: [
+      '/assets/images/materials/aardewerk.png',
+      '/assets/images/materials/natuuursteen.png',
+      '/assets/images/materials/licht hout.png',
+      '/assets/images/materials/linnen.png'
+    ],
   },
   {
     id: '10',
@@ -149,6 +203,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#FF6347', '#FFD700', '#4169E1', '#228B22'],
     materials: ['Teak hout', 'Leer', 'Kunststof', 'Messing'],
     imageUrl: '/assets/images/midcentury.png',
+    exampleImages: [
+      '/assets/images/materials/donker_hout.png',
+      '/assets/images/materials/kunststof.png',
+      '/assets/images/materials/messing.png',
+      '/assets/images/materials/plastic.png'
+    ],
   },
   {
     id: '11',
@@ -164,6 +224,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#2F4F4F', '#DAA520', '#8B7D6B', '#556B2F', '#CD853F'],
     materials: ['Smeedijzer', 'Gebrandschilderd glas', 'Edelhout', 'Tegels met patronen'],
     imageUrl: '/assets/images/artnouveau.png',
+    exampleImages: [
+      '/assets/images/materials/Smeedijzer.png',
+      '/assets/images/materials/gebrand glass.png',
+      '/assets/images/materials/edelhout.png',
+      '/assets/images/materials/tegelpatroon.png'
+    ],
   },
   {
     id: '12',
@@ -179,6 +245,12 @@ export const interiorStyles = [
     colors: ['#F1F0EA', '#8B4789', '#D4AF37', '#20B2AA', '#DC143C', '#4682B4'],
     materials: ['Gemixte stoffen', 'Verschillende houtsoorten', 'Metaal en glas', 'Vintage items'],
     imageUrl: '/assets/images/eclectisch.png',
+    exampleImages: [
+      '/assets/images/materials/Gemixte stoffen.png',
+      '/assets/images/materials/verweerd hout.png',
+      '/assets/images/materials/staal.png',
+      '/assets/images/materials/vintage wood.png'
+    ],
   },
 ];
 

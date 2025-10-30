@@ -10,7 +10,8 @@
       "Bash(xargs kill:*)",
       "Bash(cat:*)",
       "Bash(npm run dev:backend:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(node -e:*)"
     ],
     "deny": [],
     "ask": []

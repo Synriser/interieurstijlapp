@@ -25,7 +25,7 @@ import { styleRecommendations } from '../data/styleRecommendations';
 function VisualisatiePage() {
   const navigate = useNavigate();
   const [visualizationData, setVisualizationData] = useState(null);
-  const [roomSize, setRoomSize] = useState(5); // Default 5m length
+  const [roomSize, setRoomSize] = useState(''); // Empty by default
   const [wallHeight, setWallHeight] = useState(2.5); // Default 2.5m
   const [showCostCalculator, setShowCostCalculator] = useState(false);
 
@@ -73,6 +73,7 @@ function VisualisatiePage() {
   const calculateWallArea = () => {
     // Calculate wall area based on room length (assuming square room)
     // perimeter = 4 * length for square room
+    if (!roomSize || roomSize === '') return 0;
     const perimeter = roomSize * 4;
     return perimeter * wallHeight;
   };
@@ -143,22 +144,22 @@ function VisualisatiePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+                    Lengte (m)
                     <div className="group relative">
-                      <Info className="w-5 h-5 text-gray-400 cursor-help" />
-                      <span className="absolute left-0 top-7 w-64 p-2 bg-gray-900 text-white text-xs rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-normal z-10">
-                        Voer de lengte in meters in (bv. 5.5)
+                      <Info className="w-4 h-4 text-gray-400 cursor-help" />
+                      <span className="absolute left-0 top-6 w-64 p-2 bg-gray-900 text-white text-xs rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-normal">
+                        Lengte van één wand in meters. Aanname: vierkante ruimte
                       </span>
                     </div>
                   </label>
                   <input
                     type="number"
                     value={roomSize}
-                    onChange={(e) => setRoomSize(Number(e.target.value))}
+                    onChange={(e) => setRoomSize(e.target.value === '' ? '' : Number(e.target.value))}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     min="1"
                     max="50"
                     step="0.1"
-                    placeholder="Lengte in meters"
                   />
                 </div>
                 <div>

@@ -143,11 +143,10 @@ function VisualisatiePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
-                    Lengte (m)
                     <div className="group relative">
-                      <Info className="w-4 h-4 text-gray-400 cursor-help" />
-                      <span className="absolute left-0 top-6 w-64 p-2 bg-gray-900 text-white text-xs rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-normal">
-                        Lengte van één wand in meters. Aanname: vierkante ruimte
+                      <Info className="w-5 h-5 text-gray-400 cursor-help" />
+                      <span className="absolute left-0 top-7 w-64 p-2 bg-gray-900 text-white text-xs rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-normal z-10">
+                        Voer de lengte in meters in (bv. 5.5)
                       </span>
                     </div>
                   </label>
@@ -159,6 +158,7 @@ function VisualisatiePage() {
                     min="1"
                     max="50"
                     step="0.1"
+                    placeholder="Lengte in meters"
                   />
                 </div>
                 <div>
